@@ -1,0 +1,17 @@
+$anchor-color: #e62b92;
+$btn-primary-color: #fff;
+$btn-primary-bg: #e62b92;
+$btn-primary-border: #e62b92;
+
+a {
+  color: $anchor-color;
+}
+
+.btn-primary,
+.btn-primary:focus,
+.btn-primary:hover,
+.btn-primary:active {
+  background-color: $btn-primary-bg;
+  border-color: $btn-primary-border;
+  color: $btn-primary-color;
+}

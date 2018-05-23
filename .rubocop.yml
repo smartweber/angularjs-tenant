@@ -1,0 +1,46 @@
+require: rubocop-eql
+
+Rails:
+  Enabled: false
+
+AllCops:
+  TargetRubyVersion: 2.3
+  Include:
+    - Rakefile
+    - Gemfile
+    - Guardfile
+    - config.ru
+  Exclude:
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - 'bower_components/**/*'
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/FirstArrayElementLineBreak:
+  Enabled: true
+
+Style/FirstHashElementLineBreak:
+  Enabled: true
+
+Style/FirstMethodArgumentLineBreak:
+  Enabled: true
+
+Style/FirstMethodParameterLineBreak:
+  Enabled: true
+
+Style/MultilineAssignmentLayout:
+  Enabled: true
+
+Style/OptionHash:
+  Enabled: true
+
+Style/Send:
+  Enabled: true
+
+Style/SymbolArray:
+  Enabled: true

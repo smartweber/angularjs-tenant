@@ -1,0 +1,11 @@
+%span{ 'ng-controller' => 'ApplyFormEmploymentController',
+       'ng-form' => 'formPart2' }
+  %span I'm currently
+  %nl-select{ options: 'employmentOpts', value: 'employment_status' }
+  %span.animate-fade{ 'ng-if' => 'employment_status == "employed"' }
+    %span as
+    %nl-text{ placeholder: 'job', required: 'required', value: 'job' }
+  %span.animate-fade{ 'ng-if' => 'employment_status == "studying"' }
+    %span for
+    %nl-text{ placeholder: 'subject', required: 'required', value: 'job' }
+  %span.nl-suppress-whitespace-left .

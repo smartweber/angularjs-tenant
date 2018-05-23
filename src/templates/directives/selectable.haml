@@ -1,0 +1,15 @@
+.selectable{ 'ng-class' => '{ \'open\' : open }' }
+  %button.input-visible{ 'ng-click' => 'toggleOpen()' }
+    %span{ 'ng-bind' => 'title()' }
+    %i.icon.select-arrow.icon-rotate-180
+  .options
+    .s-option{ 'ng-if' => 'multi && placeholder', 'ng-click' => 'setAll()' }
+      %i.icon{ 'ng-class' => "{ true: 'checkbox-checked',
+        false: 'checkbox-unchecked' }[ngModel.length == 0]" }
+      %span{ 'ng-bind' => 'placeholder' }
+    .s-option{ 'ng-repeat' => 'option in options',
+      'ng-click' => 'setSelected(option)' }
+      %i.icon{ 'ng-class' => "{ true: 'checkbox-checked',
+        false: 'checkbox-unchecked' }[checkboxOnOff(option)]",
+        'ng-if' => 'multi' }
+      %span{ 'ng-bind' => 'option[valueField]' }

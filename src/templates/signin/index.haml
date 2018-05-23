@@ -1,0 +1,18 @@
+%form{ 'ng-submit' => 'signIn()' }
+  .signin-control
+    %label Email
+    %input.form-control{ 'ng-model' => 'signinForm.email',
+    type: 'text', required: 'required', name: 'email' }
+  .signin-control
+    %label Password
+    %input.form-control{ 'ng-model' => 'signinForm.password',
+    type: 'password', required: 'required', name: 'password' }
+  .signin-control.clearfix
+    %checkbox{ 'ng-model' => 'form.rememberMe',
+    'placeholder' => 'Remember me' }
+    .pull-right
+      %a{ 'ui-sref' => 'signin.forgot' } Forgot password?
+  .signin-errors{ 'ng-if' => 'errors' }
+    Sorry, your email or password are incorrect
+
+  %button.btn.btn-primary{ 'type' => 'submit' } Sign In

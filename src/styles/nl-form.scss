@@ -1,0 +1,236 @@
+$color-background: #fc5959;
+$color-black: #000;
+$color-field-invalid: #d00;
+$color-primary: #e62b92;
+$color-secondary: #fff;
+$color-white: #fff;
+
+$anim-duration: 200ms;
+$base-font-size: 2rem;
+$base-line-height: 1.2em;
+
+@font-face {
+  font-family: 'nlicons';
+  src: url('/fonts/nlicons/nlicons.eot');
+  src: url('/fonts/nlicons/nlicons.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/nlicons/nlicons.woff') format('woff'),
+    url('/fonts/nlicons/nlicons.ttf') format('truetype'),
+    url('/fonts/nlicons/nlicons.svg#nlicons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// general style for the form
+.nl-form {
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  width: 100%;
+
+  .nl-suppress-whitespace-left {
+    margin-left: -.25em;
+  }
+}
+
+.nl-field {
+  display: inline-block;
+  position: relative;
+
+  // normalize the input elements, make them look like everything else
+  input,
+  select {
+    background: transparent;
+    border: 0;
+    color: inherit;
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  &.nl-field-open {
+    .nl-field-items {
+      opacity: 1;
+      transform: translateY(-50%) scale(1);
+      transition: visibility $anim-duration,
+                  opacity $anim-duration,
+                  transform $anim-duration;
+      visibility: visible;
+      z-index: 10000;
+    }
+
+    .nl-overlay {
+      opacity: 1;
+      transition-delay: 0s;
+      visibility: visible;
+    }
+  }
+
+  // NL text field
+  &.nl-text {
+    .nl-field-items {
+      min-width: 10em;
+    }
+
+    .nl-text-input input {
+      border-bottom: 0;
+      color: $color-white;
+      padding: .2em 2em .2em .5em;
+      width: 100%;
+    }
+
+    .nl-text-input input::placeholder {
+      color: $color-secondary;
+    }
+
+    .nl-text-input input:input-placeholder {
+      color: $color-secondary;
+    }
+
+    .nl-field-toggle {
+      border-bottom-style: solid;
+    }
+
+    .nl-text-subline {
+      border-top: 1px dashed rgba($color-white, .7);
+      color: $color-white;
+      font-size: 85%;
+      font-style: italic;
+      padding-left: .75em;
+    }
+  }
+
+  // NL select field
+  &.nl-select .nl-field-items .nl-field-item {
+    cursor: pointer;
+    padding: 0 1.5em 0 .5em;
+    white-space: nowrap;
+
+    &.nl-select-checked {
+      color: $color-secondary;
+    }
+
+    &.nl-select-checked::before {
+      content: '\e000';
+      font-size: 50%;
+      line-height: 3;
+      position: absolute;
+      right: 1em;
+    }
+  }
+
+  // drop-down list / text element
+  .nl-field-items {
+    background: $color-background;
+    font-size: 80%;
+    left: -.5em;
+    list-style: none;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-40%) scale(.9);
+    transition: visibility $anim-duration 0ms,
+                opacity $anim-duration,
+                transform $anim-duration;
+    visibility: hidden;
+
+    .nl-field-item {
+      color: $color-white;
+      position: relative;
+    }
+  }
+
+  // the toggle is the visible part in the form
+  .nl-field-toggle {
+    border-bottom: 1px dashed $color-primary;
+    color: $color-primary;
+    cursor: pointer;
+    display: inline-block;
+    line-height: inherit;
+    min-height: $base-line-height;
+    min-width: 1ch;
+  }
+
+  // Validations
+  &.ng-invalid.nl-touched {
+    .nl-field-toggle {
+      border-bottom: 1px dashed $color-field-invalid;
+      color: $color-field-invalid;
+    }
+  }
+
+  .nl-field-submit {
+    background: rgba($color-black, .1);
+    border: 0;
+    color: transparent;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    height: 100%;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 1.8em;
+  }
+
+  .nl-field-submit::before {
+    color: $color-white;
+    content: '\e001';
+    display: block;
+    font-size: 75%;
+    line-height: 2.5;
+    width: 100%;
+  }
+
+  // overlay becomes visible when a field is opened
+  .nl-overlay {
+    background: rgba($color-black, .5);
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    transition: visibility $anim-duration,
+                opacity $anim-duration;
+    visibility: hidden;
+    width: 100%;
+    z-index: 9999;
+  }
+
+  // icons for some elements
+  .nl-select-checked::before,
+  .nl-field-submit::before {
+    font-family: 'nlicons';
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    speak: none;
+    text-transform: none;
+  }
+}
+
+.no-touch {
+  .nl-select {
+    .nl-field-item:hover {
+      background: rgba($color-black, .05);
+    }
+
+    .nl-field-item:hover:active {
+      color: $color-secondary;
+    }
+  }
+}

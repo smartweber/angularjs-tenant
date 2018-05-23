@@ -1,0 +1,16 @@
+.nl-field.nl-select{ 'ng-form' => 'nlFieldSelect',
+              'ng-class' => '{"nl-field-open": opened, "nl-touched": touched}' }
+  .nl-overlay{ 'ng-click' => 'close()' }
+  .nl-field-toggle{ 'ng-bind' => 'getSelected()',
+                    'ng-click' => 'open($event)' }
+  .nl-field-items
+    .nl-field-item{ 'ng-bind' => 'allOptions',
+                    'ng-click' => 'selectAll()',
+                    'ng-show' => 'allOptions && multiple && !isAllSelected()' }
+    .nl-field-item{ 'ng-bind' => 'label',
+                    'ng-class' => '{"nl-select-checked": isSelected(label)}',
+                    'ng-click' => 'select(label)',
+                    'ng-repeat' => 'label in getLabels()' }
+    .nl-field-item{ 'ng-bind' => 'none',
+                    'ng-click' => 'selectNone()',
+                    'ng-show' => 'multiple && !isNoneSelected()' }

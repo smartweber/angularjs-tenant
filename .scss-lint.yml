@@ -1,0 +1,13 @@
+plugin_gems: ['scss_lint_custom']
+
+exclude:
+  - 'node_modules/**/*'
+  - 'bower_components/**/*'
+  - 'vendor/**/*'
+
+linters:
+  LineLength:
+    enabled: true
+
+  RedundantNewline:
+    enabled: true

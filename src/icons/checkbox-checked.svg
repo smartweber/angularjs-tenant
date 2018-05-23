@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>checked</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="agentDashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="agentManageUsersAdd" transform="translate(-650.000000, -465.000000)" fill="#e62b92">
+            <g id="table" transform="translate(280.000000, 140.000000)">
+                <g id="checkbox" transform="translate(370.000000, 323.000000)">
+                    <path d="M3.81102604,7.52230729 L2.72223437,8.61109896 L6.22223437,12.111099 L14,4.33333333 L12.9112083,3.24454167 L6.22223437,9.89435938 L3.81102604,7.52230729 L3.81102604,7.52230729 Z M12.4444323,14.4444323 L1.55556771,14.4444323 L1.55556771,3.55556771 L9.33333333,3.55556771 L9.33333333,2 L1.55556771,2 C0.699927083,2 0,2.69992708 0,3.55556771 L0,14.4444323 C0,15.3000729 0.699927083,16 1.55556771,16 L12.4444323,16 C13.3000729,16 14,15.3000729 14,14.4444323 L14,8.22223437 L12.4444323,8.22223437 L12.4444323,14.4444323 L12.4444323,14.4444323 Z" id="checked"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,55 @@
+$anim-duration: 200ms;
+
+.animate-fade {
+  &.ng-enter,
+  &.ng-leave {
+    transition: $anim-duration linear all;
+  }
+
+  &.ng-enter {
+    opacity: 0;
+
+    &.ng-enter-active {
+      opacity: 1;
+    }
+  }
+
+  &.ng-leave {
+    opacity: 1;
+
+    &.ng-leave-active {
+      opacity: 0;
+    }
+  }
+}
+
+.animate-slide {
+  &.ng-enter,
+  &.ng-leave {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    text-overflow: clip;
+    transition: $anim-duration linear all;
+  }
+
+  &.ng-enter {
+    left: 100%;
+    opacity: 0;
+
+    &.ng-enter-active {
+      left: 0;
+      opacity: 1;
+    }
+  }
+
+  &.ng-leave {
+    opacity: 1;
+    right: 0;
+
+    &.ng-leave-active {
+      opacity: 0;
+      right: 100%;
+    }
+  }
+}

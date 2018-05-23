@@ -1,0 +1,15 @@
+%span{ 'ng-controller' => 'ApplyFormAdditionalRequestsController',
+      'ng-form' => 'formPart9' }
+  %span{ 'ng-if' => 'numTenants == 0' } I
+  %span{ 'ng-if' => 'numTenants > 0' } We
+  %span have
+  %nl-select{ options: 'requestOpts', value: 'hasRequest' }
+  %span additional requests before moving in.
+
+  %span{ 'ng-if' => 'hasRequest' }
+    %span Could
+    %span{ 'ng-if' => 'numTenants == 0' } I
+    %span{ 'ng-if' => 'numTenants > 0' } We
+    %span please
+    %nl-text{ placeholder: 'describe your requests',
+             value: 'user.additional_request' }

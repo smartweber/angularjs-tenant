@@ -1,0 +1,87 @@
+.detail-wrap
+  .header.flex-wrap-space
+    .detail-logo.flex-wrap-space
+      %a{ 'ui-sref' => 'signin.index' }
+        %img{ src: 'images/logo1.png', alt: 'Apply.Property' }
+    %a.signin-btn.btn.flex-btn{ 'ui-sref' => 'signin.index' }
+      Sign In
+  .body
+    .request-area.flex-wrap-space
+      .content
+        .title
+          77 Hallam St, Richmod, TW9 2JX
+        .price
+          .label
+            Price:
+          .value
+            £4,500 pm / £1,250 pw
+      %a.request-btn.btn.btn-primary.flex-btn{ 'ui-sef' => 'signin.index'}
+        Request a Viewing
+
+    .available-area
+      .content-wrap.flex-row
+        .date-area.flex-wrap-space
+          .availability
+            .label
+              Availability:
+            .value
+              21Apr2016
+          .finish
+            .label
+              Finished:
+            .value
+              Yes
+          .shape-area.flex-wrap-space
+            .sofa.flex-wrap-space
+              .image
+              .value
+                4
+            .shape1.flex-wrap-space
+              .image
+              .value
+                6
+            .shape2.flex-wrap-space
+              .image
+              .value
+                2
+        .rarely-available-to
+          Rarely available to the rental market this stunning two bedroom apartment in the ever popular Kelvinside area of the West End. The full accommodation comprises entrance hallway, lounge with feature fireplace, modern fitted kitchen, two double bedrooms and four piece bathroom. Gas central heating, double glazing.
+        .view-area
+          .available-viewing-ap
+            Available Viewing Appointments
+          .time-wrap
+            .time-group
+              .title
+                Tuesday 31st Aug
+              .date-group
+                .date.rectangle-1.flex-btn 
+                  9:40
+                .date.rectangle-1.flex-btn 
+                  10:00
+            .time-group
+              .title
+                Wednesfay 1st Aug
+              .date-group
+                .date.rectangle-1.flex-btn 
+                  9:40
+                .date.rectangle-1.flex-btn 
+                  10:00
+                .date.rectangle-1.flex-btn 
+                  10:00
+                .date.rectangle-1.flex-btn 
+                  10:00
+                .date.rectangle-1.flex-btn 
+                  10:00
+          %a.wait-btn.flex-btn.btn{ 'ui-sef' => 'signin.index'}
+            Join Waiting List
+      .slider-wrap.flex-row
+        .full-width
+          %flex-slider{ 'slider-id' => 'slider', 'flex-slide' => 'image in prod.imagePaths track by $index', 'animation' => 'fade', 'animation-loop' => 'false', 'sync' => '#carousel', 'slideshow' => 'false', 'control-nav' => 'false', 'init-delay' => '100' }
+            %li
+              %image{ 'ng-src' => 'image.custom' }
+        .full-width
+          %flex-slider{ 'slider-id' => 'carousel', 'flex-slide' => 'image in prod.imagePaths track by $index', 'animation' => 'slide', 'animation-loop' => 'false', 'item-width' => '210', 'item-margin' => '5', 'slideshow' => 'false', 'control-nav' => 'false', 'as-nav-for' => '#slider' }
+            %li
+              %image{ 'ng-src' => 'image.thumbnail' }
+    .map-area
+

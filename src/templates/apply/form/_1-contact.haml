@@ -1,0 +1,22 @@
+%span{ 'ng-controller' => 'ApplyFormContactController',
+      'ng-form' => 'formPart1' }
+  %div{ 'ng-if' => 'formPart1.$valid', 'ng-init' => 'onFormValid()' }
+
+  %span Hi, my name is
+  %nl-text{ placeholder: 'full name',
+           required: 'required',
+           subline: 'your full name',
+           value: 'user.name' }
+
+  %span you can contact me by email at
+  %nl-text{ placeholder: 'email address',
+           required: 'required',
+           subline: 'your email address',
+           value: 'user.email' }
+
+  %span.nl-suppress-whitespace-left , or by phone on
+  %nl-text{ placeholder: '+44 1111 111 111',
+           required: 'required',
+           subline: 'your phone number',
+           value: 'user.phone' }
+  %span.nl-suppress-whitespace-left .

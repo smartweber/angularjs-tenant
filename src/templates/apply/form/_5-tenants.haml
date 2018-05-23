@@ -1,0 +1,16 @@
+%span{ 'ng-controller' => 'ApplyFormTenantsController',
+       'ng-form' => 'formPart5' }
+  %div{ 'ng-if' => 'formPart5.$valid', 'ng-init' => 'onFormValid()' }
+
+  %span There will be
+  %nl-select{ value: 'numTenants', options: 'numbersOpts' }
+  %span other
+  %span{ 'ng-if' => 'numTenants == 0' } tenants.
+  %span{ 'ng-if' => 'numTenants > 0' } tenant, named
+  %span.animate-fade{ 'ng-repeat' => 'tenant in otherTenants.tenants' }
+    %nl-text{ placeholder: 'name',
+              value: 'tenant.name',
+              required: 'required',
+              subline: 'full name' }
+    %span{ 'ng-show' => '!$last' } and
+    %span.nl-suppress-whitespace-left{ 'ng-show' => '$last' } .

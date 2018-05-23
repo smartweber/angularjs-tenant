@@ -1,0 +1,12 @@
+%div{ 'ng-hide' => 'sent' }
+  .signin-control
+    %label Email
+    %input.form-control{ type: 'text', 'ng-model' => 'form.email' }
+  .btn.btn-primary{ 'ng-click' => 'sent = true' } Reset Password
+  .signin-splitter.mt20
+  %a.btn-link{ 'ui-sref' => 'signin.index' } Back to Log In
+%div{ 'ng-show' => 'sent' }
+  .signin-message
+    %span New password was sent to
+    %span{ 'ng-bind' => 'form.email' }
+  .btn.btn-primary{ 'ui-sref' => 'signin.index' } Sign In

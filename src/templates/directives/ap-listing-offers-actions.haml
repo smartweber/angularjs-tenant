@@ -1,0 +1,24 @@
+%div
+  %div{ 'ng-if' => '!state' }
+    %button.btn.btn-primary{ type: 'button', 'ng-click' => 'schedule(property_id)' }
+      Schedule Viewing
+
+  %div{ 'ng-if' => '"new_viewing" === state' }
+    %button.btn.btn-danger{ type: 'button', 'ng-click' => 'cancel(property_id)' }
+      Cancel Viewing
+    %br
+    %br
+    %button.btn.btn-primary{ type: 'button', 'ng-click' => 'reschedule(property_id)' }
+      Reschedule
+
+  %div{ 'ng-if' => '"no_applications" === state' }
+    %button.btn.btn-primary{ type: 'button', 'ng-click' => 'apply(property_id)' }
+      Apply
+
+  %div{ 'ng-if' => '"with_applications" === state' }
+    %button.btn.btn-primary{ type: 'button', 'ng-click' => 'edit(property_id)' }
+      Edit Application
+
+  %div{ 'ng-if' => '"application_selected" === state' }
+    %button.btn.btn-primary{ type: 'button', 'ng-click' => 'provide(property_id)' }
+      Provide Documents

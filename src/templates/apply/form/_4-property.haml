@@ -1,0 +1,20 @@
+%span{ 'ng-controller' => 'ApplyFormPropertyController',
+       'ng-form' => 'formPart4' }
+  %div{ 'ng-if' => 'formPart4.$valid', 'ng-init' => 'onFormValid()' }
+
+  %span I would like to apply for
+  %nl-text{ placeholder: 'property address',
+            required: 'required',
+            value: 'property.address' }
+  %span.nl-suppress-whitespace-left .
+  %br/
+  %span{ 'ng-show' => '!property.listing_id' }
+    %span It is managed by
+    %nl-text{ placeholder: 'letting agent',
+              required: 'required',
+              value: 'property.letting_agent' }
+    %span in
+    %nl-text{ placeholder: 'branch location',
+              required: 'required',
+              value: 'property.branch_location' }
+    %span.nl-suppress-whitespace-left .

@@ -1,0 +1,5 @@
+.nl-field{ 'ng-class' => '{"nl-field-open": opened}', 'ng-form' => 'nlField' }
+  .nl-overlay{ 'ng-click' => 'close()' }
+  .nl-field-toggle{ 'ng-bind' => 'viewValue()', 'ng-click' => 'open($event)' }
+  .nl-field-items
+    .nl-field-item{ 'ng-transclude' => '' }

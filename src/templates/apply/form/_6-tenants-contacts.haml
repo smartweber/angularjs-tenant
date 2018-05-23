@@ -1,0 +1,44 @@
+%span{ 'ng-controller' => 'ApplyFormTenantsContactsController',
+      'ng-form' => 'formPart6' }
+  %div{ 'ng-if' => 'formPart6.$valid', 'ng-init' => 'onFormValid()' }
+
+  %p.animate-fade{ 'ng-repeat' => 'tenant in otherTenants.tenants' }
+    %nl-text{ placeholder: 'name', value: 'tenant.name', required: 'required' }
+    %span is
+    %nl-select{ options: 'adulthoodOpts', value: 'tenant.is_adult' }
+    %span.nl-suppress-whitespace-left{ 'ng-if' => 'tenant.is_adult == false' } .
+
+    %span.animate-fade{ 'ng-if' => 'tenant.is_adult == true' }
+      %span.nl-suppress-whitespace-left , is
+      %nl-select{ options: 'smokerOpts', value: 'tenant.smoker' }
+      %span.nl-suppress-whitespace-left , and can be contacted at
+      %nl-text{ placeholder: 'email address',
+                required: 'required',
+                value: 'tenant.email' }
+      %span or on
+      %nl-text{ placeholder: '+44 1111 111 111',
+                required: 'required',
+                value: 'tenant.phone' }
+      %span.nl-suppress-whitespace-left .
+
+      %span They are currently
+      %nl-select{ options: 'employmentOpts', value: 'tenant.employment_status' }
+      %span.nl-suppress-whitespace-left{ '' => '',
+                       'ng-if' => 'tenant.employment_status == "unemployed"' } .
+      %span.animate-fade{ 'ng-if' => 'tenant.employment_status == "employed"' }
+        %span as
+        %nl-text{ placeholder: 'job',
+                  required: 'required',
+                  value: 'tenant.job' }
+      %span.animate-fade{ 'ng-if' => 'tenant.employment_status == "studying"' }
+        %span for
+        %nl-text{ placeholder: 'subject',
+                  required: 'required',
+                  value: 'tenant.job' }
+      %span.animate-fade{ '' => '',
+                         'ng-if' => 'tenant.employment_status != "unemployed"' }
+        %span with a total income of £
+        %nl-text{ placeholder: '000,000',
+                  value: 'tenant.annual_income',
+                  required: 'required' }
+        %span per year.

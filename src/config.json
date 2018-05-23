@@ -1,0 +1,14 @@
+{
+  "development": {
+    "appConfig": {
+      "apiUrl": "http://api.staging.apply.property",
+      "env": "development"
+    }
+  },
+  "production": {
+    "appConfig": {
+      "apiUrl": "http://api.staging.apply.property",
+      "env": "production"
+    }
+  }
+}

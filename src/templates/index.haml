@@ -1,0 +1,27 @@
+!!!
+%html{ lang: 'en', 'ng-app' => 'appForm', 'ng-strict-di' => '' }
+  %head
+    %meta{ charset: 'utf-8' }/
+    %meta{ content: 'IE=edge', 'httpequiv' => 'X-UA-Compatible' }/
+    %title Property Technologies
+    %meta{ content: '', name: 'description' }/
+    %meta{ content: 'width=device-width, initial-scale=1', name: 'viewport' }/
+    %link{ href: 'styles/vendor.css', rel: 'stylesheet', type: 'text/css' }
+    %link{ href: 'styles/application.css', rel: 'stylesheet', type: 'text/css' }
+    %link{ href: 'icons/icons.css', rel: 'stylesheet', type: 'text/css' }
+  %body
+    %noscript You need Javascript enabled to use this site.
+    /[if lte IE 9]
+      %p.browsehappy
+        You are using an
+        %strong outdated browser.
+        Please
+        %a{ href: 'http://browsehappy.com/' }
+          upgrade your browser
+        to improve your experience.
+    %section{ 'ui-view' => '' }
+    %script{ type: 'text/javascript', src: 'scripts/vendor.js' }
+    %script{ type: 'text/javascript', src: 'scripts/config.js' }
+    %script{ type: 'text/javascript', src: 'scripts/templates.js' }
+    %script{ type: 'text/javascript', src: 'scripts/application.js' }
+    %script{ src: 'https://maps.google.com/maps/api/js' }

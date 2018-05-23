@@ -1,0 +1,19 @@
+%span{ 'ng-controller' => 'ApplyFormPaymentAndLeaseController',
+      'ng-form' => 'formPart7' }
+  %div{ 'ng-if' => 'formPart7.$valid', 'ng-init' => 'onFormValid()' }
+
+  %span{ 'ng-if' => 'numTenants == 0' } I
+  %span{ 'ng-if' => 'numTenants > 0' } We
+  %span can pay £
+  %nl-text{ placeholder: '0,000',
+            required: 'required',
+            value: 'payment.monthly_rent' }
+  %span per month with
+  %nl-select{ options: 'monthsOpts', value: 'payment.advance_rent_months' }
+  %span months in advance and a lease commencing on
+  %nl-field.datepicker-input-wrapper{ '' => '',
+                    placeholder: "payment.lease_starts_on | date:'longDate'" }
+    %input{ type: 'date',
+            'ng-required' => 'required',
+            'ng-model' => 'payment.lease_starts_on' }
+  %span.nl-suppress-whitespace-left .

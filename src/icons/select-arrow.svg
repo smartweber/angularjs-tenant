@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="7px" height="5px" viewBox="0 0 7 5" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>sort</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="222.5 14 225 16.34375 220 16.34375"></polygon>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-1" y="-1" width="7" height="4.34375">
+            <rect x="219" y="13" width="7" height="4.34375" fill="white"></rect>
+            <use xlink:href="#path-1" fill="black"></use>
+        </mask>
+    </defs>
+    <g id="agentDashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.9">
+        <g id="agentManageUsersAdd" transform="translate(-869.000000, -308.000000)">
+            <g id="dropDown-Copy" transform="translate(650.000000, 295.000000)">
+                <g id="dropDown">
+                    <g id="sort">
+                        <use fill="#e62b92" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <use stroke="#e62b92" mask="url(#mask-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

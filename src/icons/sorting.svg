@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="6px" height="11px" viewBox="0 0 6 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>sort</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M60,11.5 L62,9 L58,9 L60,11.5 Z M60,3 L62,5.5 L58,5.5 L60,3 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-1" y="-1" width="6" height="10.5">
+            <rect x="57" y="2" width="6" height="10.5" fill="white"></rect>
+            <use xlink:href="#path-1" fill="black"></use>
+        </mask>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.9">
+        <g id="tableLegend" transform="translate(-57.000000, -5.000000)">
+            <g id="tableLegend-Copy" transform="translate(0.000000, 3.000000)">
+                <g id="sort">
+                    <use fill="#D4D6D7" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <use stroke="#D4D6D7" mask="url(#mask-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

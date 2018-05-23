@@ -1,0 +1,18 @@
+.nl-field.nl-text{ 'ng-form' => 'nlFieldText',
+              'ng-class' => '{"nl-field-open": opened, "nl-touched": touched}' }
+  .nl-overlay{ 'ng-click' => 'close()' }
+  .nl-field-toggle{ 'ng-bind' => 'viewValue()', 'ng-click' => 'open($event)' }
+  .nl-field-items
+    .nl-field-item.nl-text-input
+      %input{ name: '{{ name }}',
+              placeholder: '{{ placeholder }}',
+              type: 'text',
+              'ng-click' => '$event.stopPropagation()',
+              'ng-model' => 'value',
+              'ng-model-options' => '{ updateOn: "blur" }',
+              'ng-blur' => 'touched=true',
+              'ng-keypress' => 'keyPressed($event)',
+              'ng-required' => 'required' }
+      %button.nl-field-submit{ 'type' => 'button', 'ng-click' => 'close()' }
+    .nl-field-item.nl-text-subline{ 'ng-bind' => 'subline',
+                       'ng-show' => 'showSubline()' }

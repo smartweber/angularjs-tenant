@@ -1,0 +1,76 @@
+%div{ 'ng-if' => 'listings.length > 0' }
+  %table.table
+    %thead
+      %tr{ 'sortable' => 'sorting' }
+        %th.control{ 'sortable-column' => 'property', colspan: '2' }
+          Property
+          %i.icon
+        %th.control{ 'sortable-column' => 'price' }
+          %span Price
+          %span.fs10 (week / month)
+          %i.icon
+        %th.control
+        %th.control
+    %tbody{ 'infinite-scroll' => 'fetchData()',
+            'infinite-scroll-distance' => '0.3',
+            'infinite-scroll-disabled' => '!canFetchMoreData()' }
+      %tr{ 'ng-repeat-start' => 'listing in listings' }
+        %td{ style: 'width: 120px', 'ng-click' => 'toggleListing(listing)' }
+          %img.listing-thumbnail{ '' => '',
+          'ng-src' => '{{listing.thumbnail_url || fallbackUrl}}',
+          'sr-fallback' => '{{fallbackUrl}}' }
+        %td{ 'ng-click' => 'toggleListing(listing)' }
+          .fs16.ftw
+            %span {{ ::listing.property.number }}
+            %span {{ ::listing.property.street }}
+          %div
+            %span {{ ::cityAndPostcode(listing.property) }}
+          %div
+            %span.pr10
+              %i.icon.sofa
+              %span.light-text.fs10 {{ ::listing.property.living_rooms }}
+            %span.pr10
+              %i.icon.bed
+              %span.light-text.fs10 {{ ::listing.property.bedrooms }}
+            %span
+              %i.icon.shower
+              %span.light-text.fs10 {{ ::listing.property.bathrooms }}
+        %td
+          %div
+            %span {{ ::listing.price.weekly | currency:"£":0 }}
+            %span pw
+          %div
+            %span {{ ::listing.price.monthly | currency:"£":0 }}
+            %span pm
+        %td
+          %ap-listing-offers-info{ 'ng-model' => 'listing' }
+        %td
+          %ap-listing-offers-actions{ 'ng-model' => 'listing' }
+
+      %tr.expanded-listing.animate-fade{ 'ng-repeat-end' => '',
+                                         'ng-if' => 'listing.expanded' }
+        %td.properties{ colspan: 3 }
+          %span.property-type
+            Availability:
+          %span.property-value
+            {{ listing.available_on | date:'d MMM y' }}
+          %span.property-type
+            Furnished:
+          %span.property-value
+            {{ ::listing.property.furnished ? 'Yes' : 'No' }}
+          .description {{ ::listing.description }}
+        %td.map{ colspan: 2 }
+          %ng-map{ 'id' => 'listing-{{listing.id}}',
+                   'center' => '{{ propertyLocation(listing) }}' }
+            %marker{ 'position' => '{{ propertyLocation(listing) }}',
+                     'centered' => 'true' }
+
+.loading.primary{ 'ng-if' => '"pending" === loading_status' }
+  %i.icon.spinner
+  %div Loading more...
+.loading.primary{ 'ng-if' => 'canFetchMoreData()' }
+  %a{ 'ng-click' => 'fetchData()' } See more
+.loading.danger{ 'ng-if' => '"failed" === loading_status' }
+  %i.icon.o-exclamation-mark
+  %div Failed to load listings
+  %a{ 'ng-click' => 'fetchData()' } Retry

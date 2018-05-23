@@ -1,0 +1,25 @@
+.header
+  .header-title
+    %div &nbsp;
+    .header-page{ 'state-title' => '' }
+  .header-toolbar
+    .pull-right
+      .dropdown
+        .dropdown-button
+          %img.userpic.mr5{ src: 'http://placehold.it/30x30' }
+          %span.mr10 Barbara Green
+          %i.icon.arrow-down
+        .dropdown-content
+          .dropdown-menu
+            %a
+              %i.icon.settings.mr10
+              %span Settings
+            %a{ 'ui-sref' => 'app.main.users.list' }
+              %i.icon.manage-users.mr10
+              %span Manage Users
+            %a
+              %i.icon.support.mr10
+              %span Support
+            %a{ 'ng-click' => 'signOut()' }
+              %i.icon.sign-out.mr10
+              %span Sign Out

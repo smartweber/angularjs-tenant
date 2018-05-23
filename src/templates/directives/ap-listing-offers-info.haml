@@ -1,0 +1,27 @@
+%div
+  %div{ 'ng-if' => '"new_viewing" === state' }
+    %span {{ ::ngModel.my_viewing.agent_name }},
+    %span {{ ngModel.my_viewing.start_at | date:'longDate' }}
+
+  %div{ 'ng-if' => '"no_applications" === state' }
+    .circle-border
+      %span 0
+    %span Offers.
+    %span Be the first!
+
+  %div{ 'ng-if' => '"with_applications" === state' }
+    .circle-border
+      %span {{ ::ngModel.applications.count }}
+    %span
+      Offers - Highest is £{{::ngModel.applications.highest_offer}}
+    .small{ 'ng-if' => 'isHighestOffer()' }
+      Your offer is the highest
+    .small{ 'ng-if' => '!isHighestOffer()' }
+      Your offer is {{::percDiffToHighestOffer()}}% below the highest
+    .light-text
+      Your offer £:
+    %input{ type: 'number', min: 0, 'ng-model' => 'newApplicationOffer()' }
+    %button{ type: 'button', 'ng-click' => 'updateApplicationOffer()' } OK
+
+  %div{ 'ng-if' => '"application_selected" === state' }
+    %span Your offer of £{{ngModel.my_application.monthly_rent}} was successful!

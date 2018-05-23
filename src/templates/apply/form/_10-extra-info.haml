@@ -1,0 +1,11 @@
+%span{ 'ng-controller' => 'ApplyFormExtraInfoController',
+      'ng-form' => 'formPart10' }
+  %span{ 'ng-if' => 'numTenants == 0' } I
+  %span{ 'ng-if' => 'numTenants > 0' } We
+  %span would be
+  %span{ 'ng-if' => 'numTenants == 0' } a brilliant tenant
+  %span{ 'ng-if' => 'numTenants > 0' } brilliant tenants
+  %span because
+  %nl-text{ placeholder: 'write a few words about yourself',
+            value: 'user.bio' }
+  %span.nl-suppress-whitespace-left .

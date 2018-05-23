@@ -1,0 +1,5 @@
+%span{ 'ng-controller' => 'ApplyFormPetsController', 'ng-form' => 'formPart8' }
+  %span{ 'ng-if' => 'numTenants == 0' } I
+  %span{ 'ng-if' => 'numTenants > 0' } We
+  %nl-select{ options: 'petsOpts', value: 'user.has_pets' }
+  %span be keeping pets.

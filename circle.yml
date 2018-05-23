@@ -1,0 +1,15 @@
+dependencies:
+  pre:
+    - gem install bundler
+    - bundle install
+
+test:
+  override:
+    - bundle exec rubocop
+    - bundle exec haml-lint `find . -name '*.haml'`
+    - bundle exec scss-lint `find src -name '*.scss'`
+    - bundle exec coffeelint *.coffee
+    - bundle exec coffeelint **/*.coffee
+    - bundle exec coffeelint `find src -name '*.coffee'`
+    - bundle exec coffeelint `find test -name '*.coffee'`
+    - npm run test
